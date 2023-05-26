@@ -10,11 +10,6 @@ import (
 )
 
 type DBConfig struct {
-	/* 	Host     string
-	   	Port     int
-	   	User     string
-	   	Password string
-	   	Name     string */
 	DB *gorm.DB
 }
 
@@ -46,14 +41,3 @@ func setpAndConnectDbConfig() (*gorm.DB, error) {
 	db, err := gorm.Open(postgres.Open(connectionString), &gorm.Config{})
 	return db, err
 }
-
-/* func connectDatabase() (*gorm.DB, error) {
-	connectionString := fmt.Sprintf("host=%s port=%v user=%s password=%s dbname=%s sslmode=disable",
-		config.DbConfigs.Host,
-		config.DbConfigs.Port,
-		config.DbConfigs.User,
-		config.DbConfigs.Password,
-		config.DbConfigs.Name)
-	db, err := gorm.Open(postgres.Open(connectionString), &gorm.Config{})
-	return db, err
-} */
